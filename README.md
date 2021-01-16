@@ -3,6 +3,11 @@
 ## usage
 
 ```bash
+docker run --rm -it -d --privileged \
+    -e DOCKER_STORAGE_DRIVER=devicemapper \
+     docker:dind
+
+docker pull alpine:latest
 docker run --rm -it \
   -v /var/run/docker.sock:/var/run/docker.sock \
   dockdevsecops/oscap-docker:latest \
